@@ -256,10 +256,17 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     .instruction {
+        position: relative;
+        top: 20px;
         font-family: "Cedarville Cursive", cursive;
         font-size: 62px;
-        margin-bottom: 0;
-        padding-bottom: 0;
+    }
+
+    .timer {
+        position: relative;
+        top: -20px;
+        font-family: "Cedarville Cursive", cursive;
+        font-size: 56px;
     }
 }
 
