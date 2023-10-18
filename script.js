@@ -24,10 +24,11 @@ const holdSlider = document.getElementById('hold-slider');
 const exhaleSlider = document.getElementById('exhale-slider');
 const relaxSlider = document.getElementById('relax-slider');
 
-let currentPositionX = 0; // Initial X position
-let currentPositionY = 0; // Initial Y position
 let currentDirection = 'right'; // Initial direction
-let currentTime = inhaleSlider.value; // Initial time
+let currentTime = inhaleSlider.value; // Initial timer
+let startTime = null;
+let startPositionX = 0; // Initial X position
+let startPositionY = 0; // Initial Y position
 
 // logic 
 const instructions = ['Inhale...', 'Hold...', 'Exhale...', 'Relax...'];
@@ -36,24 +37,26 @@ const sliders = [inhaleSlider, holdSlider, exhaleSlider, relaxSlider];
 /* ------------------------------------------
 FUNCTIONS
 ------------------------------------------ */
-
 // Function to start the breathing cycle
 function startBreathingCycle() {
     // fill in 1s delay
     instruction.innerText = `Ready?`;
     
+    // After a 1s delay, start the movement of the element
     setTimeout(() => {
-        // After a 1s delay, start the movement of the element
         moveElement();
-    }, 1000); // Delay of 1 second
-
+    }, 1000);
+    
     let currentIndex = 0;
+    
     // Function to update instruction and timer every second
     function updateInstructionAndTimer() {
         const currentInstruction = instructions[currentIndex];
         const currentSlider = sliders[currentIndex];
         const sliderValue = currentSlider.value;
         
+        console.log(currentTime)
+
         // Update the timer element every second
         let countdown = sliderValue;
         const countdownInterval = setInterval(() => {
@@ -78,48 +81,80 @@ function startBreathingCycle() {
 // Function to move the element based on the direction and time
 function moveElement() {
     const distance = 260; // Width and height of the square
-    let velocity = distance / (currentTime * 10); // Calculate velocity
 
-    // Move the element based on the current direction
-    switch (currentDirection) {
-        case 'right':
-            currentPositionX += velocity;
-            if (currentPositionX >= distance) {
-                currentPositionX = distance;
-                currentDirection = 'bottom';
-                currentTime = holdSlider.value;
-            }
-            break;
-        case 'bottom':
-            currentPositionY += velocity;
-            if (currentPositionY >= distance) {
-                currentPositionY = distance;
-                currentDirection = 'left';
-                currentTime = exhaleSlider.value;
-            }
-            break;
-        case 'left':
-            currentPositionX -= velocity;
-            if (currentPositionX <= 0) {
-                currentPositionX = 0;
-                currentDirection = 'top';
-                currentTime = relaxSlider.value;
-            }
-            break;
-        case 'top':
-            currentPositionY -= velocity;
-            if (currentPositionY <= 0) {
-                currentPositionY = 0;
-                currentDirection = 'right';
-                currentTime = inhaleSlider.value;
-            }
-            break;
+    if (!startTime) {
+        startTime = performance.now();
     }
 
-    movingElement.style.transform = `translate(${currentPositionX}px, ${currentPositionY}px)`;
+    // Calculate the animation progress as a value between 0 and 1
+    const progress = (performance.now() - startTime) / (currentTime * 1000);
 
-    // Continue moving
-    requestAnimationFrame(moveElement);
+    // If the animation is not complete
+    if (progress < 1) {
+        // Calculate the target position based on the current direction
+        let targetX, targetY;
+
+        switch (currentDirection) {
+            case 'right':
+                targetX = distance;
+                targetY = startPositionY;
+                break;
+            case 'bottom':
+                targetX = startPositionX;
+                targetY = distance;
+                break;
+            case 'left':
+                targetX = 0;
+                targetY = startPositionY;
+                break;
+            case 'top':
+                targetX = startPositionX;
+                targetY = 0;
+                break;
+        }
+
+        // Update the current position based on the progress
+        currentPositionX = startPositionX + (targetX - startPositionX) * progress;
+        currentPositionY = startPositionY + (targetY - startPositionY) * progress;
+
+        // Update the element's position
+        movingElement.style.transform = `translate(${currentPositionX}px, ${currentPositionY}px)`;
+
+        // Continue the animation
+        requestAnimationFrame(moveElement);
+    
+    // If the animation is complete, reset the start time and update direction and time for the next phase
+    } else {
+        startTime = null;
+
+        switch (currentDirection) {
+            case 'right':
+                currentDirection = 'bottom';
+                currentTime = holdSlider.value;
+                
+                startPositionX = distance;
+                break;
+            case 'bottom':
+                currentDirection = 'left';
+                currentTime = exhaleSlider.value;
+                
+                startPositionY = distance;
+                break;
+            case 'left':
+                currentDirection = 'top';
+                currentTime = relaxSlider.value;
+                startPositionX = 0;
+                break;
+            case 'top':
+                currentDirection = 'right';
+                currentTime = inhaleSlider.value;
+                startPositionY = 0;
+                break;
+        }
+
+        // Continue the animation for the next phase
+        requestAnimationFrame(moveElement);
+    }
 }
 
 /* ------------------------------------------
