@@ -46,7 +46,7 @@ function startBreathingCycle() {
     setTimeout(() => {
         moveElement();
     }, 1000);
-    
+
     let currentIndex = 0;
     
     // Function to update instruction and timer every second
@@ -55,8 +55,6 @@ function startBreathingCycle() {
         const currentSlider = sliders[currentIndex];
         const sliderValue = currentSlider.value;
         
-        console.log(currentTime)
-
         // Update the timer element every second
         let countdown = sliderValue;
         const countdownInterval = setInterval(() => {
@@ -81,6 +79,8 @@ function startBreathingCycle() {
 // Function to move the element based on the direction and time
 function moveElement() {
     const distance = 260; // Width and height of the square
+
+    
 
     if (!startTime) {
         startTime = performance.now();
