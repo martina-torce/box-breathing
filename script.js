@@ -16,6 +16,7 @@ const boxSection = document.querySelector('.box-section');
 const breathingBox = document.querySelector('.breathing-box');
 const buttonSection = document.querySelector('.button-section');
 const stopButton = document.querySelector('.stop-button');
+const movingElement = document.querySelector('.moving-element');
 
 // slider values
 const inhaleSlider = document.getElementById('inhale-slider');
@@ -84,6 +85,7 @@ startButton.addEventListener('click', () => {
     breathingBox.classList.remove('hidden');
     buttonSection.classList.remove('hidden');
     stopButton.classList.remove('hidden');
+    movingElement.classList.remove('hidden');
 
     // Start the breathing cycle
     startBreathingCycle();
