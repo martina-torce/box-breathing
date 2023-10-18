@@ -14,6 +14,8 @@ const instruction = document.querySelector('.instruction');
 const timer = document.querySelector('.timer');
 const boxSection = document.querySelector('.box-section');
 const breathingBox = document.querySelector('.breathing-box');
+const buttonSection = document.querySelector('.button-section');
+const stopButton = document.querySelector('.stop-button');
 
 // slider values
 const inhaleSlider = document.getElementById('inhale-slider');
@@ -69,18 +71,25 @@ EVENTS
 // Pressing the start button
 startButton.addEventListener('click', () => {
     // Hide 
-    mainTitle.style.display = 'none';
-    startButton.style.display = 'none';
-    sliderSection.style.display = 'none';
+    mainTitle.classList.add('hidden');
+    startButton.classList.add('hidden');
+    sliderSection.classList.add('hidden');
 
     // Display
-    breathingSection.style.display = 'flex';
-    topSection.style.display = 'flex';
-    instruction.style.display = 'block';
-    timer.style.display = 'block';
-    boxSection.style.display = 'flex';
-    breathingBox.style.display = 'block';
+    breathingSection.classList.remove('hidden');
+    topSection.classList.remove('hidden');
+    instruction.classList.remove('hidden');
+    timer.classList.remove('hidden');
+    boxSection.classList.remove('hidden');
+    breathingBox.classList.remove('hidden');
+    buttonSection.classList.remove('hidden');
+    stopButton.classList.remove('hidden');
 
     // Start the breathing cycle
     startBreathingCycle();
+});
+
+// Reloads the page
+stopButton.addEventListener('click', function() {
+    location.reload();
 });
