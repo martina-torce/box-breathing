@@ -79,8 +79,6 @@ function updateInstructionAndTimer() {
 function moveElement() {
     const distance = 260; // Width and height of the square
 
-    
-
     if (!startTime) {
         startTime = performance.now();
     }
@@ -122,7 +120,7 @@ function moveElement() {
         // Continue the animation
         requestAnimationFrame(moveElement);
     
-    // If the animation is complete, reset the start time and update direction and time for the next phase
+    // If the animation is complete, reset start time and update direction and time for  next phase
     } else {
         startTime = null;
 
@@ -130,13 +128,11 @@ function moveElement() {
             case 'right':
                 currentDirection = 'bottom';
                 currentTime = holdSlider.value;
-                
                 startPositionX = distance;
                 break;
             case 'bottom':
                 currentDirection = 'left';
                 currentTime = exhaleSlider.value;
-                
                 startPositionY = distance;
                 break;
             case 'left':
