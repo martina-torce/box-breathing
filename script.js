@@ -54,26 +54,26 @@ function startBreathingCycle() {
 
 // Function to update instruction and timer every second
 function updateInstructionAndTimer() {
-        const currentInstruction = instructions[currentIndex];
-        const currentSlider = sliders[currentIndex];
-        const sliderValue = currentSlider.value;
+    const currentInstruction = instructions[currentIndex];
+    const currentSlider = sliders[currentIndex];
+    const sliderValue = currentSlider.value;
+    
+    // Update the timer element every second
+    let countdown = sliderValue;
+    const countdownInterval = setInterval(() => {
+        // Update the instruction text
+        instruction.innerText = `${currentInstruction}`;
+        timer.innerText = countdown;
+        countdown--;
         
-        // Update the timer element every second
-        let countdown = sliderValue;
-        const countdownInterval = setInterval(() => {
-            // Update the instruction text
-            instruction.innerText = `${currentInstruction}`;
-            timer.innerText = countdown;
-            countdown--;
-            
-            if (countdown <= 0) {
-                clearInterval(countdownInterval);
-                currentIndex = (currentIndex + 1) % sliders.length;
-                // Start the next phase
-                updateInstructionAndTimer();
-            }
-        }, 1000);
-    }
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            currentIndex = (currentIndex + 1) % sliders.length;
+            // Start the next phase
+            updateInstructionAndTimer();
+        }
+    }, 1000);
+}
 
 // Function to move the element based on the direction and time
 function moveElement() {
