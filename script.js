@@ -42,11 +42,12 @@ FUNCTIONS
 function startBreathingCycle() {
     // Fill in 1s delay
     instruction.innerText = `Ready?`;
-    
+    currentTime = inhaleSlider.value; // User-defined value
+
     // Start the first breathing cycle
     updateInstructionAndTimer();
 
-    // After a 1s delay, start the movement of the element along the box
+    // After a 1s delay, start the first movement of the element along the box
     setTimeout(() => {
         moveElement();
     }, 1000);
@@ -182,4 +183,3 @@ startButton.addEventListener('click', () => {
 stopButton.addEventListener('click', function() {
     location.reload();
 });
-
