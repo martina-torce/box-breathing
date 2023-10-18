@@ -9,8 +9,11 @@ const sliderSection = document.querySelector('.slider-section');
 
 // second page elements
 const breathingSection = document.querySelector('.breathing-section');
+const topSection = document.querySelector('.top-section');
 const instruction = document.querySelector('.instruction');
 const timer = document.querySelector('.timer');
+const boxSection = document.querySelector('.box-section');
+const breathingBox = document.querySelector('.breathing-box');
 
 // slider values
 const inhaleSlider = document.getElementById('inhale-slider');
@@ -71,9 +74,12 @@ startButton.addEventListener('click', () => {
     sliderSection.style.display = 'none';
 
     // Display
-    breathingSection.style.display = 'block';
+    breathingSection.style.display = 'flex';
+    topSection.style.display = 'flex';
     instruction.style.display = 'block';
     timer.style.display = 'block';
+    boxSection.style.display = 'flex';
+    breathingBox.style.display = 'block';
 
     // Start the breathing cycle
     startBreathingCycle();

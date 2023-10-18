@@ -41,7 +41,6 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .start-button:hover {
@@ -57,10 +56,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: linear-gradient(45deg, #c25d73, #b53b56);
+    background: linear-gradient(45deg, rgba(194, 93, 115, 0.8), rgba(181, 59, 86, 0.8));
     border-radius: 10px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .slider-container {
@@ -89,8 +87,6 @@ input[type="range"] {
     border-radius: 5px;
     outline: none;
     opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -122,23 +118,43 @@ input[type="range"]::-webkit-slider-thumb {
     position: absolute;
     width: 40%;
     height: 75%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: linear-gradient(45deg, #c25d73, #b53b56);
+    background: linear-gradient(45deg, rgba(194, 93, 115, 0.8), rgba(181, 59, 86, 0.8));
     border-radius: 10px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
-    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-section {
+    height: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-section {
+    height: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .instruction {
     font-family: "Cedarville Cursive", cursive;
-    font-size: 85px;
+    font-size: 72px;
 }
 
 .timer {
     font-family: "Cedarville Cursive", cursive;
     font-size: 56px;
+}
+
+.breathing-box {
+    width: 250px;
+    height: 250px;
+    border: 10px solid #2b3a3d;
 }
 
 .hidden {
