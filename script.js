@@ -24,33 +24,36 @@ const holdSlider = document.getElementById('hold-slider');
 const exhaleSlider = document.getElementById('exhale-slider');
 const relaxSlider = document.getElementById('relax-slider');
 
-let currentDirection = 'right'; // Initial direction
-let currentTime = inhaleSlider.value; // Initial timer
-let startTime = null;
-let startPositionX = 0; // Initial X position
-let startPositionY = 0; // Initial Y position
-
 // logic 
 const instructions = ['Inhale...', 'Hold...', 'Exhale...', 'Relax...'];
 const sliders = [inhaleSlider, holdSlider, exhaleSlider, relaxSlider];
+let currentIndex = 0;
+let startTime = null;
+let currentTime = inhaleSlider.value; // Initial timer
+let currentDirection = 'right'; // Initial direction
+let startPositionY = 0; // Initial Y position
+let startPositionX = 0; // Initial X position
 
 /* ------------------------------------------
 FUNCTIONS
 ------------------------------------------ */
+
 // Function to start the breathing cycle
 function startBreathingCycle() {
-    // fill in 1s delay
+    // Fill in 1s delay
     instruction.innerText = `Ready?`;
     
-    // After a 1s delay, start the movement of the element
+    // Start the first breathing cycle
+    updateInstructionAndTimer();
+
+    // After a 1s delay, start the movement of the element along the box
     setTimeout(() => {
         moveElement();
     }, 1000);
+}
 
-    let currentIndex = 0;
-    
-    // Function to update instruction and timer every second
-    function updateInstructionAndTimer() {
+// Function to update instruction and timer every second
+function updateInstructionAndTimer() {
         const currentInstruction = instructions[currentIndex];
         const currentSlider = sliders[currentIndex];
         const sliderValue = currentSlider.value;
@@ -71,10 +74,6 @@ function startBreathingCycle() {
             }
         }, 1000);
     }
-
-    // Start the first phase
-    updateInstructionAndTimer();
-}
 
 // Function to move the element based on the direction and time
 function moveElement() {
