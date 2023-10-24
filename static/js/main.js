@@ -3,9 +3,8 @@ VARIABLES
 ------------------------------------------ */
 
 // First page elements
-const mainTitle = document.querySelector(".main-title");
+const startPage = document.querySelector(".start-page");
 const startButton = document.querySelector(".start-button");
-const sliderSection = document.querySelector(".slider-section");
 
 // Second page elements
 const breathingSection = document.querySelector(".breathing-section");
@@ -163,9 +162,7 @@ EVENTS
 // Pressing the start button
 startButton.addEventListener("click", () => {
   // Hide
-  mainTitle.classList.add("hidden");
-  startButton.classList.add("hidden");
-  sliderSection.classList.add("hidden");
+  startPage.classList.add("hidden");
 
   // Display
   breathingSection.classList.remove("hidden");

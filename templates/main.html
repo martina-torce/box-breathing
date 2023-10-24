@@ -1,89 +1,82 @@
 {% extends 'base.html' %} {% block head %}
 <title>Box Breathing</title>
-<link rel="stylesheet" href="/static/css/styles.css" />
 <link rel="stylesheet" href="/static/css/main.css" />
-
-<!-- font -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet" />
-<!-- font -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet" />
 {% endblock %} {% block body %}
+
 <!-- Starting page -->
 <div class="background-image"></div>
-<a href="/login" class="login-link"> <i class="fas fa-sign-in-alt"></i> Login </a>
-<div class="main-title">box breathing</div>
-<button class="start-button">start</button>
-<div class="slider-section">
-  <div class="slider-container">
-    <label for="inhale-slider">Inhale</label>
-    <input type="range" id="inhale-slider" min="0" max="10" value="3" />
-    <div class="slider-values">
-      <div>0s</div>
-      <div>1s</div>
-      <div>2s</div>
-      <div>3s</div>
-      <div>4s</div>
-      <div>5s</div>
-      <div>6s</div>
-      <div>7s</div>
-      <div>8s</div>
-      <div>9s</div>
-      <div>10s</div>
+<div class="start-page">
+  <a href="/login" class="login-link">Login</a>
+  <div class="main-title">box breathing</div>
+  <button class="start-button">start</button>
+  <div class="slider-section">
+    <div class="slider-container">
+      <label for="inhale-slider">Inhale</label>
+      <input type="range" id="inhale-slider" min="0" max="10" value="3" />
+      <div class="slider-values">
+        <div>0s</div>
+        <div>1s</div>
+        <div>2s</div>
+        <div>3s</div>
+        <div>4s</div>
+        <div>5s</div>
+        <div>6s</div>
+        <div>7s</div>
+        <div>8s</div>
+        <div>9s</div>
+        <div>10s</div>
+      </div>
     </div>
-  </div>
-  <div class="slider-container">
-    <label for="exhale-slider">Exhale</label>
-    <input type="range" id="exhale-slider" min="0" max="10" value="3" />
-    <div class="slider-values">
-      <div>0s</div>
-      <div>1s</div>
-      <div>2s</div>
-      <div>3s</div>
-      <div>4s</div>
-      <div>5s</div>
-      <div>6s</div>
-      <div>7s</div>
-      <div>8s</div>
-      <div>9s</div>
-      <div>10s</div>
+    <div class="slider-container">
+      <label for="exhale-slider">Exhale</label>
+      <input type="range" id="exhale-slider" min="0" max="10" value="3" />
+      <div class="slider-values">
+        <div>0s</div>
+        <div>1s</div>
+        <div>2s</div>
+        <div>3s</div>
+        <div>4s</div>
+        <div>5s</div>
+        <div>6s</div>
+        <div>7s</div>
+        <div>8s</div>
+        <div>9s</div>
+        <div>10s</div>
+      </div>
     </div>
-  </div>
-  <div class="slider-container">
-    <label for="hold-slider">Hold</label>
-    <input type="range" id="hold-slider" min="0" max="10" value="2" />
-    <div class="slider-values">
-      <div>0s</div>
-      <div>1s</div>
-      <div>2s</div>
-      <div>3s</div>
-      <div>4s</div>
-      <div>5s</div>
-      <div>6s</div>
-      <div>7s</div>
-      <div>8s</div>
-      <div>9s</div>
-      <div>10s</div>
+    <div class="slider-container">
+      <label for="hold-slider">Hold</label>
+      <input type="range" id="hold-slider" min="0" max="10" value="2" />
+      <div class="slider-values">
+        <div>0s</div>
+        <div>1s</div>
+        <div>2s</div>
+        <div>3s</div>
+        <div>4s</div>
+        <div>5s</div>
+        <div>6s</div>
+        <div>7s</div>
+        <div>8s</div>
+        <div>9s</div>
+        <div>10s</div>
+      </div>
     </div>
-  </div>
-  <div class="slider-container">
-    <label for="relax-slider">Relax</label>
-    <input type="range" id="relax-slider" min="0" max="10" value="2" />
-    <div class="slider-values">
-      <div>0s</div>
-      <div>1s</div>
-      <div>2s</div>
-      <div>3s</div>
-      <div>4s</div>
-      <div>5s</div>
-      <div>6s</div>
-      <div>7s</div>
-      <div>8s</div>
-      <div>9s</div>
-      <div>10s</div>
+    <div class="slider-container">
+      <label for="relax-slider">Relax</label>
+      <input type="range" id="relax-slider" min="0" max="10" value="2" />
+      <div class="slider-values">
+        <div>0s</div>
+        <div>1s</div>
+        <div>2s</div>
+        <div>3s</div>
+        <div>4s</div>
+        <div>5s</div>
+        <div>6s</div>
+        <div>7s</div>
+        <div>8s</div>
+        <div>9s</div>
+        <div>10s</div>
+      </div>
     </div>
   </div>
 </div>
