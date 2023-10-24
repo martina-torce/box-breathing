@@ -1,18 +1,8 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-}
+/* CSS file for main.html */
 
 /* first page */
 .background-image {
-  background-image: url("images/background.jpg");
+  background-image: url("/static/images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,6 +10,11 @@ body {
   height: 100vh;
 }
 
+.login-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 .main-title {
   line-height: 1;
   position: absolute;
@@ -96,7 +91,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: url("images/slider.png");
+  background: url("/static/images/slider.png");
 
   cursor: pointer;
 }
@@ -185,7 +180,7 @@ input[type="range"]::-webkit-slider-thumb {
 .moving-element {
   width: 25px;
   height: 25px;
-  background: url("images/slider.png");
+  background: url("/static/images/slider.png");
   cursor: pointer;
   margin-top: -17.5px;
   margin-left: -17.5px;
