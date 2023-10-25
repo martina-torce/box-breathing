@@ -4,16 +4,16 @@
 {% endblock %} {% block body %}
 
 <!-- Starting page -->
-<div class="background-image"></div>
-<div class="start-page">
+<div class="background-image full"></div>
+<div class="start-page flex">
   <a href="/login" class="login-link">Login</a>
   <div class="main-title">box breathing</div>
-  <button class="start-button">start</button>
-  <div class="slider-section">
-    <div class="slider-container">
+  <button class="start-button btn">start</button>
+  <div class="slider-section flex">
+    <div class="slider-container flex">
       <label for="inhale-slider">Inhale</label>
       <input type="range" id="inhale-slider" min="0" max="10" value="3" />
-      <div class="slider-values">
+      <div class="slider-values flex">
         <div>0s</div>
         <div>1s</div>
         <div>2s</div>
@@ -30,7 +30,7 @@
     <div class="slider-container">
       <label for="exhale-slider">Exhale</label>
       <input type="range" id="exhale-slider" min="0" max="10" value="3" />
-      <div class="slider-values">
+      <div class="slider-values flex">
         <div>0s</div>
         <div>1s</div>
         <div>2s</div>
@@ -47,7 +47,7 @@
     <div class="slider-container">
       <label for="hold-slider">Hold</label>
       <input type="range" id="hold-slider" min="0" max="10" value="2" />
-      <div class="slider-values">
+      <div class="slider-values flex">
         <div>0s</div>
         <div>1s</div>
         <div>2s</div>
@@ -64,7 +64,7 @@
     <div class="slider-container">
       <label for="relax-slider">Relax</label>
       <input type="range" id="relax-slider" min="0" max="10" value="2" />
-      <div class="slider-values">
+      <div class="slider-values flex">
         <div>0s</div>
         <div>1s</div>
         <div>2s</div>
@@ -82,18 +82,18 @@
 </div>
 
 <!-- Counting page -->
-<div class="breathing-section hidden">
-  <div class="top-section">
+<div class="breathing-section flex hidden">
+  <div class="top-section flex">
     <div class="instruction"></div>
     <div class="timer"></div>
   </div>
-  <div class="box-section">
+  <div class="box-section flex">
     <div class="breathing-box">
       <div class="moving-element"></div>
     </div>
   </div>
-  <div class="button-section">
-    <button class="stop-button">stop</button>
+  <div class="button-section flex">
+    <button class="stop-button btn">stop</button>
   </div>
 </div>
 
