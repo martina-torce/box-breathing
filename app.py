@@ -7,7 +7,7 @@ def main():
     return render_template('main.html')
 
 @app.route('/login')
-def about():
+def login():
     return render_template('login.html')
 
 if __name__ == '__main__':

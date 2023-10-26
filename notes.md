@@ -7,4 +7,4 @@
 
 <!-- * my python and python3, as well as pip and pip3 point to the same location -->
 
-<!-- to run: flask run -->
+<!-- to run: flask run or python app.py -->

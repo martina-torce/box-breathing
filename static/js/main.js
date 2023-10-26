@@ -3,7 +3,7 @@ VARIABLES
 ------------------------------------------ */
 
 // First page elements
-const startPage = document.querySelector(".start-page");
+const startPage = document.querySelector(".start-section");
 const startButton = document.querySelector(".start-button");
 
 // Second page elements
