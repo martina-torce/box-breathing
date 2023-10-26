@@ -67,7 +67,7 @@ input[type="range"]::-webkit-slider-thumb {
 .slider-values {
   width: 100%;
   color: #d3bdbf;
-  font-size: 13px;
+  font-size: 0.8rem;
   margin-top: 6px;
   flex-direction: row;
   justify-content: space-between;
@@ -97,12 +97,12 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .instruction {
-  font-size: 72px;
+  font-size: 3.5rem;
   color: white;
 }
 
 .timer {
-  font-size: 56px;
+  font-size: 3rem;
   color: white;
 }
 

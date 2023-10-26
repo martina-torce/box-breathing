@@ -29,9 +29,31 @@ let currentDirection = "right"; // Initial direction
 let startPositionY = 0; // Initial Y position
 let startPositionX = 0; // Initial X position
 
+// Call the function to to generate slider values
+generateSliderValues("inhale-slider");
+generateSliderValues("exhale-slider");
+generateSliderValues("hold-slider");
+generateSliderValues("relax-slider");
+
 /* ------------------------------------------
 FUNCTIONS
 ------------------------------------------ */
+
+// Function to generate slider values based on the attributes of input element
+function generateSliderValues(inputId) {
+  const sliderValuesContainer = document.getElementById(inputId + "-values"); // Container for slider values
+  const sliderInput = document.getElementById(inputId); // Input element
+
+  const min = parseInt(sliderInput.getAttribute("min"));
+  const max = parseInt(sliderInput.getAttribute("max"));
+
+  // Loop to create and inject slider values
+  for (let i = min; i <= max; i++) {
+    const sliderValueDiv = document.createElement("div");
+    sliderValueDiv.textContent = i + "s";
+    sliderValuesContainer.appendChild(sliderValueDiv);
+  }
+}
 
 // Function to start the breathing cycle
 function startBreathingCycle() {
@@ -80,7 +102,7 @@ function updateInstructionAndTimer() {
 
 // Function to move the element based on the direction and time
 function moveElement() {
-  const distance = 260; // Width and height of the square
+  const distance = 240; // Width and height of the square
 
   if (!startTime) {
     startTime = performance.now();
