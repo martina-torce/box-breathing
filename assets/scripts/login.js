@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // In a real app, you would send a request to the server for authentication here.
     // For this example, let's assume a successful login.
     if (username === "user" && password === "pass") {
-      // Redirect to main.html upon successful login
+      // Redirect to index.html upon successful login
       window.location.href = "/";
     } else {
       alert("Login failed. Please try again.");
