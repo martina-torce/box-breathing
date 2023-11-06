@@ -4,7 +4,7 @@
 
 The Box Breathing App is a simple and effective tool to help you practice box breathing, a powerful relaxation technique that promotes stress reduction, mindfulness, and enhanced focus. Whether you're seeking a moment of calm in your busy day or looking to improve your overall well-being, this app guides you through the four phases of box breathing with ease.
 
-## Key Features:
+## Key Features
 
 * Guided Box Breathing: Follow a structured breathing exercise with clear instructions and visual cues.
 * Customizable Timers: Adjust the duration of each breathing phase to fit your preferences and needs.
@@ -12,7 +12,7 @@ The Box Breathing App is a simple and effective tool to help you practice box br
 * Mobile-Friendly: Access the app on your mobile device, making it convenient to use wherever you are.
 <!-- * Track Your Progress: Keep a record of your breathing sessions and see how consistent practice can lead to improved relaxation.-->
 
-## How to Use:
+## How to Use
 
 1. Set your preferred duration for each phase of the box breathing exercise using the sliders.
 2. Click the "Start" button to begin your breathing session.
